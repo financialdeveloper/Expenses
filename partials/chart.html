@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="myheader">Expense Chart</h2>
+            <div ng-controller="ChartController">
+                <nvd3-discrete-bar-chart 
+                    data="trueData" 
+                    id="exampleId" 
+                    tooltips="true" 
+                    showXAxis="true" 
+                    showYAxis="true"
+                    showValues="true"    
+                    staggerLabels="false"
+                    color="colorFunction()">
+                    <svg></svg>
+                </nvd3-discrete-bar-chart>
+            </div>
+        </div>
+    </div>
+</div>

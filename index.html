@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" ng-app="finances"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" ng-app="finances">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <title>Expense Tracking</title>
+
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nv.d3.css">
+
+    <!-- Included JS Files -->
+    <script src="js/vendor/custom.modernizr.js"></script>
+    <script src="js/vendor/d3.v3.js"></script>
+    <script src="js/vendor/nv.d3.js"></script>
+</head>
+
+<body>
+    <!-- Header and Nav -->
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavController">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Expense Tracking</a>
+            </div>
+            <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-click="navCollapsed = !navCollapsed" ng-class="{active:isActive('/dashboard')}"><a href="#/dashboard">Dashboard</a>
+                    </li>
+                    <li ng-click="navCollapsed = !navCollapsed" ng-class="{active:isActive('/chart')}"><a href="#/chart">Chart</a>
+                    </li>
+                    <li ng-click="navCollapsed = !navCollapsed"><a ng-controller="ModalController" ng-click="open()">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!--End Header and Nav -->
+
+    <!-- body -->
+    <!-- template will be injected via router -->
+
+    <div ng-view></div>
+
+    <script>
+        document.write('<script src=js/vendor/' +
+            ('__proto__' in {} ? 'zepto' : 'jquery') +
+            '.js><\/script>');
+    </script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angularfire.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/vendor/angularjs-nvd3-directives.js"></script>
+    <script src="js/vendor/ui-bootstrap-tpls-0.6.0.min.js"></script>
+</body>
+</html>
